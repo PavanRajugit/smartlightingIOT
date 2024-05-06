@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Lighting</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="icon" type="image/x-icon" href="/images/lamp.png" />
+    
+  </head>
+  <body>
+    <header class="mynavbar">
+        <div class="logo">
+          <img src="/images/weather-app.png" alt="Logo" />
+          <div class="weather-app">Smart Lighting</div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#" onclick="toggleLocationForm()">Location</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="#" onclick="downloadFrontendPage()">Download</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li> <form action="/logout" method="post" class="logout-btn">
+              <input type="submit" value="Logout">
+          </form></li>
+
+          </ul>
+        </nav>
+      </header>
+      <form id="locationForm" style="display: none;">
+        <input type="text" id="locationInput" placeholder="Enter your location">
+        <button type="button" onclick="fetchWeatherData()">Submit</button>
+      </form>
+      <div id="weather-info">
+        <!-- Weather information will be displayed here -->
+      </div>
+    <!-- Main content goes here  you code comes here-->
+
+
+
+    <script>
+
+setTimeout(function() {
+            window.location.reload(true);
+        }, 60000);
+
+
+    </script>
+  </body>
+</html>

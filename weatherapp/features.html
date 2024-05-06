@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        body {
+            position: relative;
+
+        }
+        .alert {
+            background-color: transparent;
+            position: absolute;
+            top: 79%;
+            left: 43%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+        /* Semi-transparent white background */
+            border-radius: 10px;
+            z-index: 9999; /* Ensure it's on top of other content */
+        }
+        .lighton,
+        .lightoff {
+            background-color: none;
+            display: block;
+            margin: 0 auto;
+            width: 50px; /* Adjust image width */
+            height: auto;
+        }
+        .lightnoo {
+            background-color: none;
+            color: rgb(34, 34, 34); /* Text color */
+            font-size: 24px; /* Text size */
+            font-weight: bold; /* Text weight */
+        }
+
+    </style>
+</head>
+<body class="features">
+    <div class="alert">
+    {% if alert %}
+        
+        {% if alert == "Lights are glowing" %}
+            <img class='lighton' src='https://i.postimg.cc/6QyTynzr/bulb-on.png' alt="Glowing Lights">
+        {% elif alert == "Lights are not glowing" %}
+            <img class='lightoff' src='https://i.postimg.cc/KjK1wL3c/bulb-off.png' alt="Not Glowing Lights">
+        {% else %}
+            <div class="lightnoo">Light not functioning</div>
+        {% endif %}
+    {% endif %}
+    </div>
+        
+    <div class="background"></div>
+    <div class="middle">
+        <div class="box">
+            Temperature
+            <div class="temp">
+                <div>{{ feeds['field1'] }}</div>
+        </div>
+        </div>
+        <div class="box">
+            Humidity
+            <div class="temp">
+                <div>{{ feeds['field2'] }}</div>
+        </div>
+
+        </div>
+        <div class="box">
+            IR Value
+            <div class="temp">
+                <div>{{ feeds['field6'] }}</div>
+        </div>
+        </div>
+        <div class="box">
+            LDR1 and LDR2 value
+            <div class="temp">
+                <p>{{ feeds['field4'] }},{{ feeds['field4'] }}</p>
+        </div>
+
+        </div>
+        <div class="box">
+            Energy Generated
+            <div class="temp">
+                <p>{{ feeds['field7'] }}</p>
+        </div>
+        </div>
+        <div class="box">
+            Location
+            <div class="temp">
+                <p>{{ feeds['field7'] }}</p>
+        </div>
+        </div>    
+    </div>
+
+</body>
+</html>

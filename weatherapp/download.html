@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Frontend Page</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="downloadFrontendPage()">Download</a></li>
+        </ul>
+    </nav>
+
+    <div id="frontendContent">
+        <!-- Your frontend content goes here -->
+        <h1>Hello, world!</h1>
+        <p>This is the frontend page content.</p>
+    </div>
+
+    <script>
+        function downloadFrontendPage() {
+            const frontendContent = document.getElementById('frontendContent').outerHTML;
+            const blob = new Blob([frontendContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'frontend_page.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
